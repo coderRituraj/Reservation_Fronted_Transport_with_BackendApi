@@ -100,7 +100,7 @@ export default function App() {
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                sam@example.com
+                support@bsrtc.com
               </p>
               <p>
                 <MDBIcon icon="phone" className="me-3" /> +91 873728323

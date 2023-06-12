@@ -47,7 +47,7 @@ const Portfolio = () => {
                 <div class="card text-center bg-white pb-2">
                   <div class="card-body text-dark">
                     <div class="img-area mb-4">
-                      <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/12/17/2561175-train.jpg" alt="" class="img-fluid"/>
+                      <img src="https://th.bing.com/th/id/R.1ee80f37a04b1a0def24f5e538c071d4?rik=94ZYVrNJbvIZ2A&riu=http%3a%2f%2fstatic.dnaindia.com%2fsites%2fdefault%2ffiles%2fstyles%2ffull%2fpublic%2f2018%2f02%2f08%2f649397-maharaja-express.png&ehk=IP3BdaslZTK780So3WAs7iFRvuIHwZx9T9ypLoCbn6I%3d&risl=&pid=ImgRaw&r=0"/>
                     </div>
                     <h3 class="card-title">Maharajas</h3>
                     <p class="lead">The Maharajas' Express is a luxury tourist train owned and operated by Indian Railway Catering and Tourism Corporation. It runs on 5 circuits covering more than 12 destinations across North-West and Central India, mainly centered on Rajasthan between the months of October and April. The Maharajas' Express was voted "The World's Leading Luxury Train" five times in a row at The World Travel Awards in 2012, 2013, 2014,2015, 2016 and 2017. It is the most expensive luxury train in the World. </p>
