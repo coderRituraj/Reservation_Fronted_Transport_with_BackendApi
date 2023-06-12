@@ -1,5 +1,5 @@
 import React , { useState }from "react";
-import "./style.css";
+import './style.css';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
@@ -15,39 +15,13 @@ import {
   MDBCol,
   MDBInput,
 } from "mdb-react-ui-kit";
-import { myAxios } from "./services/helper";
 
-
-export const getTrain = async (from,to)=>{
-  return await myAxios.get(`http://localhost:8080/train/from/${from}/to/${to}`).then((response)=>console.log(response.data))
-
-}
 const About = () => {
   const navigate = useNavigate();
-  
-  const searchTrain = async () => {
-    await getTrain(station.from,station.to)
-    .then((res) => {
-      toast.success("search successfull")
-      navigate("/searchtrain");
-      return res;
-    })
+  const searchTrain = () => {
+    toast.success("search successfull")
+    navigate("/searchtrain");
   };
-
-  const [station, setStation] = useState({
-    from: "",
-    to: "",
-  });
-
-  const StationChange = (event, field) => {
-    let actualValue = event.target.value;
-    setStation({
-      ...station,
-      [field]: actualValue,
-    });
-  };
-
-
   const data = [
     {
       value: 1,
@@ -109,18 +83,12 @@ const About = () => {
                     <MDBInput
                       wrapperClass="mb-4"
                       label="From"
-                      required
-                      value={station.from}
-                      onChange={(e) => StationChange(e, "from")}
                       id="form1"
                       type="text"
                     />
                     <MDBInput
                       wrapperClass="mb-4"
                       label="To"
-                      required
-                      value={station.to}
-                      onChange={(e) => StationChange(e, "to")}
                       id="form1"
                       type="text"
                     />

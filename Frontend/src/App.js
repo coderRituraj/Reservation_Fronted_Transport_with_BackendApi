@@ -17,7 +17,7 @@ import UserProvider from './UserProvider';
 import Transport from './components/Transport';
  import Aminities from './components/Aminities';
 import UpdateUser from './components/UpdateUser';
-import SearchTrains from './components/SearchTrains';
+import TrainSearch from './components/TrainSearch';
 
 
 
@@ -30,7 +30,6 @@ const Routing = () => {
           <Route path="/home" exact element={<Home />}></Route>
           <Route path="/services" element={<Services />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/searchtrain" element={<SearchTrains />}></Route>
           <Route path='/' element={<Login />}></Route>
           <Route path='/register' element={<Register />}></Route>
           <Route path='/success' element={<Success />}></Route>
@@ -39,6 +38,7 @@ const Routing = () => {
           <Route path='/transport' element={<Transport/>}/>
           <Route path='/basic' element={<Aminities/>}/>
           <Route path='/update-user/:userId' element={<UpdateUser/>}/> 
+          <Route path='/train-search' element={<TrainSearch/>}/>
 
         </Routes>
       </Router>

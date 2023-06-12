@@ -1,28 +1,65 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React from 'react';
 
-const Success = () => {
+import { Navigate, useNavigate } from 'react-router-dom';
+
+
+
+
+const Success = () =>
+
+{
+
+  const navigate = useNavigate();
+
+
+
+
   return (
+
+   
+
     <div
-    className="modal show"
-    style={{ display: 'block', position: 'initial' }}
-  >
-    <Modal.Dialog>
-      <Modal.Header closeButton>
-        <Modal.Title>Thanks to Visit Our Page</Modal.Title>
-      </Modal.Header>
 
-      <Modal.Body>
-        <p>Please Visit Again !! Bonjour</p>
-      </Modal.Body>
+      className="flex flex-col items-center justify-center h-screen bg-cover bg-center"
 
-      <Modal.Footer>
-        <Button variant="primary" href='/' className='flex items-center'>Click to Login</Button>
-      </Modal.Footer>
-    </Modal.Dialog>
-  </div>
-  )
-}
+      style={{ backgroundImage: 'url("https://images.pexels.com/photos/17148156/pexels-photo-17148156/free-photo-of-sea-dawn-landscape-sunset.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")' }}
 
-export default Success
+    >
+
+      <h1 className="bg-yellow-400 hover:bg-yellow-600 text-white  py-3 px-7 rounded-md font-extrabold from-neutral-900">Your are successfuly logout!</h1>
+
+      <p className="text-2xl  text-white">
+
+        Thank you for Choosing us, Have a pleasant journey!
+
+      </p>
+
+      <p className="text-2xl mb-12 text-white">
+
+         "If you want to relogin then click on below button"
+
+      </p>
+
+      <button
+
+        className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full"
+
+        onClick={() => {navigate("/");
+
+          // Handle login button click event
+
+        }}
+
+      >
+
+        Go to Login
+
+      </button>
+
+    </div>
+
+  );
+
+};
+
+export default Success;
