@@ -13,6 +13,9 @@ import Card from 'react-bootstrap/Card';
   } from '@chakra-ui/react'
   import { FaLocationArrow, FaTimes ,FaBusAlt} from 'react-icons/fa'
   import {BsClockFill} from 'react-icons/bs'
+  import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
   
   
   import {
@@ -74,49 +77,71 @@ import Navbars from './Navbars'
     }
   return (
     <div><Navbars/>
+    <br/>
+      <Row xs={1} md={4} className="g-4">
+      <Col>
+      {Array.from({ length: 1 }).map((_, idx) => (
+        <Col>
+          <Card style={{width:"300px"}}>
+            <Card.Img variant="top" src="https://images.wisegeek.com/girl-using-atm.jpg" style={{widht:"300px", height:"250px"}} />
+            <Card.Body>
+              <Card.Title>ATM'S</Card.Title>
+              <Card.Text>
+                This is Services
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}</Col>
+      <Col>
+      {Array.from({ length: 1 }).map((_, idx) => (
+        <Col>
+          <Card style={{width:"300px"}}>
+            <Card.Img variant="top" src="https://tse1.mm.bing.net/th/id/OIP.d_vofSG-MiThAHi-bgi9GgHaE8?pid=ImgDet&rs=1" style={{widht:"300px", height:"250px"}}/>
+            <Card.Body>
+              <Card.Title>Flats/PG</Card.Title>
+              <Card.Text>
+                This is Services
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+      </Col>
+      <Col>
+      {Array.from({ length: 1 }).map((_, idx) => (
+        <Col>
+          <Card style={{width:"300px"}}>
+            <Card.Img variant="top" src="https://jooinn.com/images/hotel-1.jpg" style={{width:"300px", height:"250px"}} />
+            <Card.Body>
+              <Card.Title>Hotel's</Card.Title>
+              <Card.Text>
+                This is Services
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+      </Col>
+      <Col>
+      {Array.from({ length: 1 }).map((_, idx) => (
+        <Col>
+          <Card style={{width:"300px"}}>
+            <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.t45bHhy5tmFmdY1ieccG-wHaE8?pid=ImgDet&rs=1" style={{widht:"300px", height:"250px"}} />
+            <Card.Body>
+              <Card.Title>Shopping</Card.Title>
+              <Card.Text>
+                This is Services
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+      </Col>
+    </Row>
+    <br/>
+    <br/>
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>ATM'S Near You</Card.Title>
-        <Card.Text>
-          
-        </Card.Text>
-        <Button variant="primary">Search</Button>
-      </Card.Body>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Hotels Near You</Card.Title>
-        <Card.Text>
-          
-        </Card.Text>
-        <Button variant="primary">Search</Button>
-      </Card.Body>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Banks Near You</Card.Title>
-        <Card.Text>
-         
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Markets Near You</Card.Title>
-        <Card.Text>
-         
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-
-    
     
       <Flex
         position='relative'

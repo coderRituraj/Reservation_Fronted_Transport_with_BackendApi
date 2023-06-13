@@ -57,7 +57,6 @@ const Navbars = () => {
                   <Nav.Link href="#portfolio">Varities</Nav.Link>
                   <NavDropdown title="Services" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="/transport">Transport</NavDropdown.Item>
-                    <NavDropdown.Item href="/translator"> Airlines</NavDropdown.Item>
                     <NavDropdown.Item href="/basic">Hotels</NavDropdown.Item>
                     <NavDropdown.Divider />
                   </NavDropdown>
