@@ -18,10 +18,16 @@ import {
 
 const About = () => {
   const navigate = useNavigate();
+
   const searchTrain = () => {
     toast.success("search successfull")
-    navigate("/searchtrain");
+    navigate("/train-search", {state : {origin: origin, destination: destination, date: date, selectedOption: selectedOption}});
   };
+
+  const [origin, setOrigin] = useState('');
+  const [destination, setDestination] = useState('');
+  const [date, setDate] = useState('');
+
   const data = [
     {
       value: 1,
@@ -85,12 +91,16 @@ const About = () => {
                       label="From"
                       id="form1"
                       type="text"
+                      value={origin}
+                      onChange={(e) => setOrigin(e.target.value)}
                     />
                     <MDBInput
                       wrapperClass="mb-4"
                       label="To"
                       id="form1"
                       type="text"
+                      value={destination}
+                      onChange={(e) => setDestination(e.target.value)}
                     />
 
                     <MDBRow>
@@ -101,6 +111,8 @@ const About = () => {
                           label="Select a date"
                           id="form2"
                           type="date"
+                          value={date}
+                          onChange={(e) => setDate(e.target.value)}
                         />
                       </MDBCol>
                       {/** if dropdown needed then use this. */}

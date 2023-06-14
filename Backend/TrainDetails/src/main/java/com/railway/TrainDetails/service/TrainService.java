@@ -5,6 +5,7 @@ import com.railway.TrainDetails.repositories.TrainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,10 @@ public class TrainService {
 
     public Optional<Train_details> getTrainbyId(String id) {
         return trainRepository.findById(id);
+    }
+    
+    public Optional<Train_details> getTrainbyOriginAndDestinationAndDateAndCoachClass(String origin, String destination, Date date){
+    	return trainRepository.findByOriginAndDestinationAndDate(origin, destination, date);
     }
 
     public void deleteTrain(Train_details train) {

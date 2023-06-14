@@ -15,6 +15,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import java.sql.Date;
 import java.util.Collections;
 
 @SpringBootApplication
@@ -34,14 +35,13 @@ public class TrainDetailsApplication implements CommandLineRunner {
         System.out.println("Done 1 !");
     }
 
-    @Override
+	@Override
     public void run(String... args) throws Exception {
         if (trainRepository.findAll().isEmpty()) {
-
-            trainRepository.save(new Train_details("1", "MUMBAI EXPRESS", "17:30", "MUMBAI CANTT", "DELHI", 500));
-            trainRepository.save(new Train_details("2", "INDIAN EXPRESS", "14:30", "MUMBAI", "PUNE", 250));
-            trainRepository.save(new Train_details("3", "SUPER EXPRESS", "10:00", "MUMBAI CANTT", "HYDRABAD", 300));
-            trainRepository.save(new Train_details("4", "new EXPRESS", "10:00", "MUMBAI CANTT", "BENGLURU", 800));
+            trainRepository.save(new Train_details("1", Date.valueOf("2023-06-26"), "12056", "MUMBAI EXPRESS", "17:25", "17:30", "MUMBAI CANTT", "DELHI", 500));
+            trainRepository.save(new Train_details("2", Date.valueOf("2023-06-27"), "11056", "INDIAN EXPRESS", "14:25", "14:30", "MUMBAI", "PUNE", 250));
+            trainRepository.save(new Train_details("3", Date.valueOf("2023-06-29"), "10503", "SUPER EXPRESS", "09:52", "10:00", "MUMBAI CANTT", "HYDRABAD", 300));
+            trainRepository.save(new Train_details("4", Date.valueOf("2023-06-28"), "12007", "new EXPRESS", "09:55","10:00", "MUMBAI CANTT", "BENGLURU", 800));
 
         }
 

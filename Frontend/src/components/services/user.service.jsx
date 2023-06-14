@@ -17,3 +17,7 @@ export const getUser = (userId) => {
 export const updateUser = (userId) => {
   return myAxios.put(`/users/${userId}`).then(response => response.data)
 }
+export const getTrain = async (from,to,date)=>{
+  return await myAxios.get(`http://localhost:8090/search/${from}/${to}/${date}`).then((response)=>(response.data))
+
+}

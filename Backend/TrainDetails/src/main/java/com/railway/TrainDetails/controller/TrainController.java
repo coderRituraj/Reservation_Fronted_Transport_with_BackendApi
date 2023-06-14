@@ -6,6 +6,7 @@ import com.railway.TrainDetails.repositories.TrainRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.Optional;
 
 @RestController
@@ -29,6 +30,12 @@ public class TrainController {
     @GetMapping("{id}")
     public Optional<Train_details> getTrain(@PathVariable String id) {
         return trainRepository.findById(id);
+    }
+    
+    
+    @GetMapping("{from}/{to}/{date}")
+    public Optional<Train_details> getTrain(@PathVariable String from, @PathVariable String to, @PathVariable Date date){
+    	return trainRepository.findByOriginAndDestinationAndDate(from, to, date);
     }
 
     @DeleteMapping("/delete/{id}")

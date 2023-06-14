@@ -18,10 +18,13 @@ import Transport from './components/Transport';
  import Aminities from './components/Aminities';
 import UpdateUser from './components/UpdateUser';
 import TrainSearch from './components/TrainSearch';
+import SearchTrains from './components/SearchTrains';
+import { useState } from 'react';
 
 
 
 export const UserContext = createContext();
+
 const Routing = () => {
   return (
     <UserProvider>
@@ -38,6 +41,7 @@ const Routing = () => {
           <Route path='/transport' element={<Transport/>}/>
           <Route path='/basic' element={<Aminities/>}/>
           <Route path='/update-user/:userId' element={<UpdateUser/>}/> 
+          <Route path='/search-train' element={<SearchTrains/>}/>
           <Route path='/train-search' element={<TrainSearch/>}/>
 
         </Routes>
@@ -45,6 +49,59 @@ const Routing = () => {
     </UserProvider>
   )
 }
+
+/*
+const Routing = () => {
+
+  const [station, setStation] = useState({
+    from: "",
+    to: "",
+  });
+
+  return (
+
+    <UserProvider>
+
+      <Router>
+
+        <Routes>
+
+          <Route path="/home" exact element={<Home station={station} setStation={setStation}/>}></Route>
+
+          <Route path="/services" element={<Services />}></Route>
+
+          <Route path="/contact" element={<Contact />}></Route>
+
+          <Route path="/search-train" element={<SearchTrains station={station}/>}></Route>
+
+          <Route path='/' element={<Login />}></Route>
+
+          <Route path='/register' element={<Register />}></Route>
+
+          <Route path='/success' element={<Success />}></Route>
+
+          <Route path='/profile-info/:userId' element={<ProfileInfo />} />
+
+          <Route path='/user' element={<Privateroute />} />
+
+          <Route path='/transport' element={<Transport/>}/>
+
+          <Route path='/basic' element={<Aminities/>}/>
+
+          <Route path='/update-user/:userId' element={<UpdateUser/>}/>
+
+          <Route path='/train-search' element={<TrainSearch/>}/>
+
+        </Routes>
+
+      </Router>
+
+    </UserProvider>
+
+  )
+
+}
+*/
 
 
 function App() {

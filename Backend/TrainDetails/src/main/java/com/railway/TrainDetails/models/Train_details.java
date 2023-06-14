@@ -1,5 +1,7 @@
 package com.railway.TrainDetails.models;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 
 
@@ -8,10 +10,15 @@ public class Train_details {
 
     @javax.persistence.Id
     private String id;
+    
+    private Date date;
+    
+    private String trainNumber;
 
 
     private String trainName;
-
+    
+    private String arrTime;
 
     private String depTime;
 
@@ -25,72 +32,125 @@ public class Train_details {
     private double fare;
 
 
-    public Train_details() {
-    }
-
-    public Train_details(String id, String trainName, String depTime, String origin, String destination, double fare) {
-        this.id = id;
-        this.trainName = trainName;
-        this.depTime = depTime;
-        this.origin = origin;
-        this.destination = destination;
-        this.fare = fare;
-    }
+	public Train_details() {
+		super();
+	}
 
 
-    public String getId() {
-        return id;
-    }
+	public Train_details(String id, Date date, String trainNumber, String trainName, String arrTime, String depTime,
+			String origin, String destination, double fare) {
+		super();
+		this.id = id;
+		this.date = date;
+		this.trainNumber = trainNumber;
+		this.trainName = trainName;
+		this.arrTime = arrTime;
+		this.depTime = depTime;
+		this.origin = origin;
+		this.destination = destination;
+		this.fare = fare;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getTrainName() {
-        return trainName;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public void setTrainName(String trainName) {
-        this.trainName = trainName;
-    }
 
-    public String getDepTime() {
-        return depTime;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public void setDepTime(String depTime) {
-        this.depTime = depTime;
-    }
 
-    public String getOrigin() {
-        return origin;
-    }
+	public Date getDate() {
+		return date;
+	}
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
 
-    public String getDestination() {
-        return destination;
-    }
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
 
-    public double getFare() {
-        return fare;
-    }
+	public String getTrainNumber() {
+		return trainNumber;
+	}
 
-    public void setFare(double fare) {
-        this.fare = fare;
-    }
 
-    @Override
-    public String toString() {
-        return "Train Name =" + trainName + " depTime =" + depTime + " Origin =" + origin + " Destination =" + destination + " fare =" + fare;
-    }
-    /*
+	public void setTrainNumber(String trainNumber) {
+		this.trainNumber = trainNumber;
+	}
+
+
+	public String getTrainName() {
+		return trainName;
+	}
+
+
+	public void setTrainName(String trainName) {
+		this.trainName = trainName;
+	}
+
+
+	public String getArrTime() {
+		return arrTime;
+	}
+
+
+	public void setArrTime(String arrTime) {
+		this.arrTime = arrTime;
+	}
+
+
+	public String getDepTime() {
+		return depTime;
+	}
+
+
+	public void setDepTime(String depTime) {
+		this.depTime = depTime;
+	}
+
+
+	public String getOrigin() {
+		return origin;
+	}
+
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
+
+
+	public String getDestination() {
+		return destination;
+	}
+
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+
+	public double getFare() {
+		return fare;
+	}
+
+
+	public void setFare(double fare) {
+		this.fare = fare;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Train_details [id=" + id + ", date=" + date + ", trainNumber=" + trainNumber + ", trainName="
+				+ trainName + ", arrTime=" + arrTime + ", depTime=" + depTime + ", origin=" + origin + ", destination="
+				+ destination + ", fare=" + fare + "]";
+	}
+
+
+        /*
      * @Override public String toString() {
      * return
      * String.format("Train_details[id='%s',trainName='%s',depTime='%s'," +

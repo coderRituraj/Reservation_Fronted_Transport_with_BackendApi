@@ -1,21 +1,22 @@
 import { data } from "autoprefixer";
-import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import DataTable from "react-data-table-component";
-import { getTrain } from "./About";
+import { getTrain } from "./services/user.service";
 
-const SearchTrains = () => {
+const SearchTrains = (props) => {
   const [trains, setTrains] = useState([]);
+  // console.log(props.station);
 
   const getTrains = async () => {
     try {
-      // const response=getTrain();
-      const response = await axios.get("http://localhost:8080/train/from/pune/to/goa");
+    const response=await getTrain(props.station.origin,props.station.destination, props.station.date)
+      // const response = await axios.get("http://localhost:8080/train/from/pune/to/goa");
       // let data2=localStorage.getItem("data",JSON.stringify(data));
-      // console.log(data2);
-      setTrains(response.data);
+     console.log(response );
+      setTrains(response)
+    
     } catch (error) {
       console.log(error);
     }
@@ -56,8 +57,8 @@ const SearchTrains = () => {
     }
   ];
   useEffect(() => {
-    getTrains();
-  }, []);
+    props.station.origin && props.station.destination && props.station.date && getTrains();
+  }, [props.station]);
 
   return (
     <DataTable
