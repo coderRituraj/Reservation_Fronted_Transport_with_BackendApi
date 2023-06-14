@@ -162,7 +162,7 @@ const TrainSearch = () => {
                     <td className=" px-4 py-2 border-solid border-4 border-black">
                       {searchResults.fare * 3}
                     </td>
-                  ) : location.state.selectedOption.value == 4 ? (
+                  ) : location.state.selectedOption.value === 4 ? (
                     <td className=" px-4 py-2 border-solid border-4 border-black">
                       {searchResults.fare * 2}
                     </td>
