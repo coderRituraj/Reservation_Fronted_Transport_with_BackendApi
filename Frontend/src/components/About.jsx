@@ -19,6 +19,7 @@ import {
 const About = () => {
   const navigate = useNavigate();
 
+
   const searchTrain = () => {
     toast.success("search successfull")
     navigate("/train-search", {state : {origin: origin, destination: destination, date: date, selectedOption: selectedOption}});
@@ -27,6 +28,12 @@ const About = () => {
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
+
+
+  const searchTrain = () => {
+    toast.success("search successfull")
+    navigate("/searchtrain");
+  };
 
   const data = [
     {
