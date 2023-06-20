@@ -1,0 +1,39 @@
+/* PaymentModule.css */
+
+.card-element-container {
+  margin-bottom: 20px;
+}
+
+.card-element {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 10px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  background-color: white;
+}
+
+.card-element .StripeElement {
+  padding: 10px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 4px;
+
+  background-color: white;
+}
+
+.card-element .StripeElement--focus {
+  border-color: #0366d6;
+}
+
+.card-element .StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
