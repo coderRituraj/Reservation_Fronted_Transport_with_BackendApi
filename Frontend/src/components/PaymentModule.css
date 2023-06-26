@@ -2,6 +2,7 @@
 
 .card-element-container {
   margin-bottom: 20px;
+  height: 1000px;
 }
 
 .card-element {
@@ -21,7 +22,7 @@
 }
 
 .card-element .StripeElement {
-  padding: 10px;
+  padding: 5px;
 
   border: 1px solid #ddd;
 
@@ -36,4 +37,57 @@
 
 .card-element .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+#paymentsec{
+  
+    background-image: url('https://wallpapershome.com/images/pages/pic_h/600.jpg');
+    background-repeat: no-repeat;
+    background-size: 1000px 1000px;
+    background-position: 25% 40%, left;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 90vh;
+    font: 1em/1.618 Inter, sans-serif;
+  
+   
+   
+    
+    
+    min-height: 100vh;
+    padding: 35px;
+    
+    color: #224;
+    background:
+      url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
+      center / cover no-repeat fixed;
+
+}
+#card2 {
+  margin-top: 20px;
+  max-width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 500px;
+  height: 425px;
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+}
+
+#heading1{
+  
+  font-size: x-large;
+  font-weight: bolder;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

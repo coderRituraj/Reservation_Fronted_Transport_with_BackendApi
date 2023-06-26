@@ -1,5 +1,4 @@
-#secondsection{
-   
+#secondsection {
     background-image: url('https://wallpapershome.com/images/pages/pic_h/600.jpg');
     background-repeat: no-repeat;
     background-size: 500px 400px, contain;
@@ -8,12 +7,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+  }
   
-}
-#sec-2{
-
-    margin-top: 2.5rem; 
+  #sec-2 {
+    margin-top: 2.5rem;
     margin-right: 4rem;
-    
- }
+  }
+  
+  #login {
+    /* Add any additional styles for the login section */
+  }
+  
+  /* Add any additional CSS styles for other elements if needed */
+  

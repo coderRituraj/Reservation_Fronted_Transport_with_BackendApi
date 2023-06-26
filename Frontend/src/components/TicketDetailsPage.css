@@ -1,0 +1,93 @@
+#ticdetails{
+    background-image: url('https://wallpapershome.com/images/pages/pic_h/600.jpg');
+    background-repeat: no-repeat;
+    background-size: 1500px 1000px;
+    background-position: 20% 40%, left;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 100vh;
+    font: 1em/1.618 Inter, sans-serif;
+  
+   
+   
+    
+    
+    min-height: 100vh;
+    padding: 30px;
+    
+    color: #224;
+    background:
+      url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
+      center / cover no-repeat fixed;
+}
+#card {
+  margin-top: 20px;
+  max-width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 500px;
+  height: 300px;
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+}
+:root {
+    font-size: 20px;
+    box-sizing: inherit;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  p:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+  
+  
+  
+  .card1{
+    margin-top: 20px;
+    max-width: 300px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    max-width: 500px;
+    height: 300px;
+    padding: 35px;
+  
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  
+    backdrop-filter: blur(15px);
+  }
+  
+  .card-footer {
+    font-size: 0.65em;
+    color: #446;
+  }
+  #mainheading{
+    font-size: x-large;
+  font-weight: bolder;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', s
+  }

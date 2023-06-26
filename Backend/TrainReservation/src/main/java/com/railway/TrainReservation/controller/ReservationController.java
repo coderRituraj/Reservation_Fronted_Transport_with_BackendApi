@@ -38,6 +38,7 @@ public class ReservationController {
 	@PostMapping("/bookTicket")
 	public String addTicket(@RequestBody Reservation add) {
 		add.setPnr();
+		add.setSeatNumber();
 		reservationRepository.save(add);
 		//"Booked ticket with pnrNo. :  " + 
 		return String.valueOf(add.getPnr());

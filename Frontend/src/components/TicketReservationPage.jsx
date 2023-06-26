@@ -90,11 +90,12 @@ const TicketReservationPage = () => {
   
 
 return (
-  <div className="form-container">
-    <h2>Ticket Reservation</h2>
+  <div id="ticsection">
+  <div className="form-container"  >
+    <h2 class ="mainheading">Ticket Reservation</h2>
     <form onSubmit={handleSubmit(handleFormSubmit)}>
     
-      <div className="form-group">
+      <div className="form-group" >
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" {...register('name', { required: true })} />
         {errors.name && <span className="error-message">Please enter your name</span>}
@@ -197,6 +198,7 @@ return (
         {success && <div className="success-message">Form submitted successfully!</div>}
       </form>
       {error && <div className="error-message">{error}</div>}
+    </div>
     </div>
     
     

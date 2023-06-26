@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import './TicketDetailsPage.css'; 
+
 
 import axios from "axios";
 
@@ -46,19 +48,22 @@ const TicketDetailsPage = () => {
   }
 
   return (
-    <div className="container mx-auto p-8 bg-gray-100 rounded">
-      <h1 className="text-2xl text-center mb-1">Ticket Details</h1>
+    <div className="container-fluid mx-auto p-8 " id ="ticdetails">
+      <h1 className="text-2xl text-center mb-1" id ="mainheading">Ticket Details</h1>
 
       <h2>Payment done with payment id: {location.state.payment['id']}</h2>
 
       {ticketDetails && (
-        <div>
+        <div class = "card1">
           <p>
             <strong>PNR:</strong> {ticketDetails.pnr}
           </p>
-
           <p>
-            <strong>Seat/Birth:</strong> {ticketDetails.seatPreferences}
+            <strong>Seat Number:</strong> {ticketDetails.seatNumber}
+          </p>
+          
+          <p>
+            <strong>Birth:</strong> {ticketDetails.seatPreferences}
           </p>
 
           <p>
@@ -77,8 +82,13 @@ const TicketDetailsPage = () => {
           <p>
             <strong>Fare:</strong> {location.state.fare}
           </p>
+          
         </div>
       )}
+     
+      
+      
+      
     </div>
   );
 };

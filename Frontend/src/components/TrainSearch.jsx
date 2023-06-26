@@ -15,15 +15,15 @@ const TrainSearch = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  console.log(location.state.origin);
-  console.log(location.state.destination);
-  console.log(location.state.date);
+  //console.log(location.state.origin);
+  //console.log(location.state.destination);
+  //console.log(location.state.date);
 
   const handleBookingClick = (trainNumber) => {
     // Handle booking logic for the selected trainNumber
-    console.log(ticketTypes[trainNumber]);
-    console.log(fareArray[trainNumber])
-    console.log()
+    // console.log(ticketTypes[trainNumber]);
+    // console.log(fareArray[trainNumber])
+    // console.log()
     navigate("/book", {
       state: {
         origin: location.state.origin,
@@ -32,12 +32,12 @@ const TrainSearch = () => {
         fare: location.state.fare,
         className: ticketTypes[trainNumber],
         finalFare: finalFare,
-        fare: fareArray[trainNumber]
+        fare: fareArray[trainNumber],
       },
     });
-    console.log("Booking clicked for trainNumber:", trainNumber);
-    console.log(ticketTypes);
-    console.log(finalFare);
+    // console.log("Booking clicked for trainNumber:", trainNumber);
+    // console.log(ticketTypes);
+    // console.log(finalFare);
   };
 
   useEffect(() => {
@@ -121,6 +121,10 @@ const TrainSearch = () => {
                     Select Class
                   </th>
 
+                  <th className=" px-4 py-2 border-solid border-4 border-black">
+                    Available Seats
+                  </th>
+
                   {/*<th className=" px-4 py-2 border-solid border-4 border-black">
                     Fare
         </th>*/}
@@ -173,21 +177,21 @@ const TrainSearch = () => {
                             <option value="" disabled>
                               --Select Class--
                             </option>
-                            <option value="ac1">AC1</option>
-                            <option value="ac2">AC2</option>
-                            <option value="ac3">AC3</option>
-                            <option value="sleeper">Sleeper</option>
+                            <option value="AC1">AC1</option>
+                            <option value="AC2">AC2</option>
+                            <option value="AC3">AC3</option>
+                            <option value="SLEEPER">Sleeper</option>
                           </select>
                         </label>
+
                         {(() => {
-                          
-                          if (selectedTicketType === "ac1") {
+                          if (selectedTicketType === "AC1") {
                             fareArray[result.trainNumber] = result.fare * 3.5;
-                          } else if (selectedTicketType === "ac2") {
+                          } else if (selectedTicketType === "AC2") {
                             fareArray[result.trainNumber] = result.fare * 3;
-                          } else if (selectedTicketType === "ac3") {
+                          } else if (selectedTicketType === "AC3") {
                             fareArray[result.trainNumber] = result.fare * 2;
-                          } else if (selectedTicketType === "sleeper") {
+                          } else if (selectedTicketType === "SLEEPER") {
                             fareArray[result.trainNumber] = result.fare * 1;
                           } else {
                             fareArray[result.trainNumber] = result.fare;
@@ -196,6 +200,23 @@ const TrainSearch = () => {
                           return fareArray[result.trainNumber];
                         })()}
                       </td>
+
+
+                      <td className="px-4 py-2 border-solid border-4 border-black">
+                        {result.seats.map((seat) => {
+                          if (seat.class_Code === ticketTypes[result.trainNumber]) {
+                            return (
+                              <div key={seat.class_Code}>
+                                <p>{seat.number_Of_seats}</p>
+                              </div>
+                            );
+                          } else {
+                            return null;
+                          }
+                        })}
+                      </td>
+
+                      {console.log(result.seats)}
 
                       <td className="p-2">
                         <button
