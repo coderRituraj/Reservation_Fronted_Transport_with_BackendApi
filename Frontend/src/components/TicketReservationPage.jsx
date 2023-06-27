@@ -144,8 +144,8 @@ return (
           <select id="modeOfPayment" {...register('modeOfPayment', { required: true })}>
           <option value="">Select</option>
             <option value="debit card">Debit Card</option>
-            <option value="upi">UPI</option>
-            <option value="net-banking">Net Banking</option>
+            <option disabled value="upi">UPI</option>
+            <option disabled value="net-banking">Net Banking</option>
           </select>
           {errors.modeOfPayment && <span className="error-message">Please select your mode of payment</span>}
         </div>

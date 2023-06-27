@@ -1,6 +1,4 @@
-import React , { useState }from "react";
-import './style.css';
-import './style.css';
+import React, { useState } from "react";
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
@@ -19,15 +17,11 @@ import {
 
 const About = () => {
   const navigate = useNavigate();
-
-  const searchTrain = () => {
-    toast.success("search successfull")
-    navigate("/train-search", {state : {origin: origin, destination: destination, date: date}});
-  };
-
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');
   const [date, setDate] = useState('');
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [searchResultsEmpty, setSearchResultsEmpty] = useState(false); // New state variable
 
   const data = [
     {
@@ -52,12 +46,24 @@ const About = () => {
     },
   ];
 
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  // handle onChange event of the dropdown
   const handleChange = (e) => {
     setSelectedOption(e);
   };
+
+  const searchTrain = () => {
+    if (origin.trim() === '' || destination.trim() === '' || date.trim() === '') {
+      
+      toast.error("Please enter origin,destination and date");
+    } 
+      
+       else {
+        setSearchResultsEmpty(false);
+        toast.success("Search successful");
+        navigate("/train-search", { state: { origin, destination, date } });
+      }
+    
+  };
+
   return (
     <div
       className="modal show"
@@ -105,7 +111,6 @@ const About = () => {
                     />
 
                     <MDBRow>
-                      {/** if date needed then use this. */}
                       <MDBCol md="6">
                         <MDBInput
                           wrapperClass="datepicker mb-4"
@@ -116,58 +121,8 @@ const About = () => {
                           onChange={(e) => setDate(e.target.value)}
                         />
                       </MDBCol>
-                      {/** if dropdown needed then use this. */}
 
-                      <MDBCol md="6" className="mb-4">
-                        {/* <MDBSelect
-              data={[
-                { text: 'Gender', value: 1, disabled: true },
-                { text: 'Female', value: 2 },
-                { text: 'Male', value: 3 }
-              ]}
-              /> */}
-                      </MDBCol>
-                      {/** if class is to be needed in dropdown then use this. */}
-                    </MDBRow>
-
-                    {/* <MDBSelect
-          className='mb-4'
-          data={[
-            { text: 'Class', value: AC1},
-            { text: 'Class 1', value: AC2 },
-            { text: 'Class 2', value: AC3},
-            { text: 'Class 3', value: Sleeper}
-          ]}
-          /> */}
-
-                    <MDBRow>
-                      <MDBCol md="6">
-                        <Select
-                          placeholder="Class"
-                          value={selectedOption} // set selected value
-                          options={data} // set list of the data
-                          onChange={handleChange} // assign onChange function
-                        />
-
-                        {selectedOption && (
-                          <div style={{ marginTop: 20, lineHeight: "25px" }}>
-                            <b>Selected Option</b>
-                            <br />
-                            <div style={{ marginTop: 10 }}>
-                              <b>Label: </b> {selectedOption.label}
-                            </div>
-                            <div>
-                              <b>Value: </b> {selectedOption.value}
-                            </div>
-                          </div>
-                        )}
-                        {/* <MDBInput
-                          wrapperClass="mb-4"
-                          label="Class"
-                          id="form3"
-                          type="text"
-                        /> */}
-                      </MDBCol>
+                      
                     </MDBRow>
                   </MDBCardBody>
                 </MDBCard>
@@ -177,9 +132,16 @@ const About = () => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button onClick={searchTrain} variant="primary">Search Train</Button>
+          <Button
+            onClick={searchTrain}
+            className="font-medium text-teal-700 hover:text-orange-400"
+            variant="primary"
+          >
+            Search Train
+          </Button>
         </Modal.Footer>
       </Modal.Dialog>
+      {searchResultsEmpty && <div> </div>}
     </div>
   );
 };

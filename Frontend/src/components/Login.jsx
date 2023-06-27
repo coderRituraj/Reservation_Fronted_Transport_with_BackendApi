@@ -68,7 +68,7 @@ const Login = () => {
 
   return (
     <section id="login">
-      <Navbars />
+    
 
       <div className="flex justify-center items-center p-8 space-y-8">
         <div className="flex w-full">
@@ -130,12 +130,7 @@ const Login = () => {
                     </label>
                   </div>
 
-                  <a
-                    href="#"
-                    className="text-sm font-medium hover:text-purple-500"
-                  >
-                    Forgot your password?
-                  </a>
+                  
                 </div>
 
                 <div>

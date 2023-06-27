@@ -1,104 +1,76 @@
 import React, { useState } from "react";
-
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom"; 
 
 import Navbars from "./Navbars";
-
 import { signUp } from "./services/user.service";
-
 import "./register.css";
 
 import Container from "react-bootstrap/Container";
-
 import Row from "react-bootstrap/Row";
-
 import Col from "react-bootstrap/Col";
-
 import Form from "react-bootstrap/Form";
-
 import Button from "react-bootstrap/Button";
 
 const Register = () => {
   const [data, setData] = useState({
     username: "",
-
     email: "",
-
     password: "",
   });
 
   const [error, setError] = useState({
     errors: {},
-
     isError: false,
   });
 
   // handle change
-
   const handleChange = (event, property) => {
     setData({ ...data, [property]: event.target.value });
   };
 
-  //reset the form
-
+  // reset the form
   const resetData = () => {
     setData({
       username: "",
-
       email: "",
-
       password: "",
     });
   };
 
-  //submit the form
-
+  // submit the form
   const submitForm = (event) => {
     event.preventDefault();
 
     if (error.isError) {
       toast.error("Please fill in all the necessary details");
-
       setError({ ...error, isError: false });
-
       return;
     }
 
     console.log(data);
 
-    //data validation
+    // data validation
 
-    //call server api for sending data
-
+    // call server api for sending data
     signUp(data)
       .then((resp) => {
         console.log(resp);
-
         console.log("success log");
-
         toast.success("User is registered successfully !! user id " + resp.id);
-
         setData({
           username: "",
-
           email: "",
-
           password: "",
         });
       })
-
       .catch((error) => {
         console.log(error);
-
         console.log("Error log");
-
         toast.error("Something went wrong");
-
-        //handle errors in a proper way
-
+        // handle errors in a proper way
         setError({
           errors: error,
-
           isError: true,
         });
       });
@@ -106,8 +78,6 @@ const Register = () => {
 
   return (
     <section>
-      <Navbars />
-
       <Container
         fluid
         className="vh-100"
@@ -131,7 +101,6 @@ const Register = () => {
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Username</Form.Label>
-
                 <Form.Control
                   type="text"
                   placeholder="Enter username"
@@ -143,7 +112,6 @@ const Register = () => {
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
@@ -151,7 +119,6 @@ const Register = () => {
                   value={data.email}
                   invalid={error.errors?.response?.data?.email ? true : false}
                 />
-
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
@@ -159,15 +126,12 @@ const Register = () => {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-
                 <Form.Control
                   type="password"
                   placeholder="Password"
                   onChange={(e) => handleChange(e, "password")}
                   value={data.password}
-                  invalid={
-                    error.errors?.response?.data?.password ? true : false
-                  }
+                  invalid={error.errors?.response?.data?.password ? true : false}
                 />
               </Form.Group>
 
@@ -184,10 +148,18 @@ const Register = () => {
                   onClick={resetData}
                   color="secondary"
                   type="reset"
-                  className="ms-2"
+                  className="font-medium text-indigo-600 hover:text-yellow-500"
                 >
                   Reset
                 </Button>
+              </div>
+
+              <div className="mt-3">
+                
+                <p>
+                  Already registered? {" "}<Link to="/"
+                    className="font-medium text-fuchsia-700 hover:text-amber-300">Login</Link>
+                </p>
               </div>
             </Form>
           </Col>

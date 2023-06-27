@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import './TicketDetailsPage.css'; 
+import Navbars from "./Navbars";
 
 
 import axios from "axios";
@@ -48,6 +49,9 @@ const TicketDetailsPage = () => {
   }
 
   return (
+    
+    <>
+    <Navbars/>
     <div className="container-fluid mx-auto p-8 " id ="ticdetails">
       <h1 className="text-2xl text-center mb-1" id ="mainheading">Ticket Details</h1>
 
@@ -88,9 +92,11 @@ const TicketDetailsPage = () => {
      
       
       
-      
+    
     </div>
+    </>
   );
+
 };
 
 export default TicketDetailsPage;
