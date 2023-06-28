@@ -158,7 +158,7 @@ const Register = () => {
                 
                 <p>
                   Already registered? {" "}<Link to="/"
-                    className="font-medium text-fuchsia-700 hover:text-amber-300">Login</Link>
+                    className="font-medium text-fuchsia-700 hover:text-amber-300">Click Here</Link>
                 </p>
               </div>
             </Form>

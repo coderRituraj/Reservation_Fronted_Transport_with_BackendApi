@@ -82,6 +82,11 @@ const TrainSearch = () => {
       {isLoading && <p>Loading...</p>}
 
       <div>
+        {searchResults.length === 0 && (
+          <div>
+            <p>Error: No search results found.</p>
+          </div>
+        )}
         {searchResults.length > 0 && (
           <div>
             <h2 className="text-xl font-bold mb-2">Search Results:</h2>
@@ -201,10 +206,11 @@ const TrainSearch = () => {
                         })()}
                       </td>
 
-
                       <td className="px-4 py-2 border-solid border-4 border-black">
                         {result.seats.map((seat) => {
-                          if (seat.class_Code === ticketTypes[result.trainNumber]) {
+                          if (
+                            seat.class_Code === ticketTypes[result.trainNumber]
+                          ) {
                             return (
                               <div key={seat.class_Code}>
                                 <p>{seat.number_Of_seats}</p>
